@@ -234,7 +234,7 @@ send_message() {
 keep_alive() {
     if [ "${ALIVE}" ]; then
         echo keep_alive
-        curl -I -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: token ${ALIVE}"  https://api.github.com/repos/yujianke100/sspanel-autocheckin/actions/workflows/work.yaml/enable > alive
+        curl -I -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: token ${ALIVE}"  https://api.github.com/repos/i-June/sspanel-autocheckin/actions/workflows/work.yaml/enable > alive
         alive=`cat alive | grep '^HTTP/2'  | cut -f2 -d ' '`
         echo $alive
         if [ "$alive" == "204" ]; then
@@ -295,21 +295,21 @@ ssp_autochenkin() {
 
                 if [ "${user}" ]; then
                     # 用户等级
-                    clasx=$(echo ${user} | jq -r ".class" 2>&1)
+                    # clasx=$(echo ${user} | jq -r ".class" 2>&1)
                     # 等级过期时间
-                    class_expire=$(echo ${user} | jq -r ".class_expire" 2>&1)
+                    # class_expire=$(echo ${user} | jq -r ".class_expire" 2>&1)
                     # 账户过期时间
-                    expire_in=$(echo ${user} | jq -r ".expire_in" 2>&1)
+                    # expire_in=$(echo ${user} | jq -r ".expire_in" 2>&1)
                     # 上次签到时间
                     last_check_in_time=$(echo ${user} | jq -r ".last_check_in_time" 2>&1)
                     # 用户余额
                     money=$(echo ${user} | jq -r ".money" 2>&1)
                     # 用户限速
-                    node_speedlimit=$(echo ${user} | jq -r ".node_speedlimit" 2>&1)
+                    # node_speedlimit=$(echo ${user} | jq -r ".node_speedlimit" 2>&1)
                     # 总流量
-                    transfer_enable=$(echo ${user} | jq -r ".transfer_enable" 2>&1)
+                    transfer_enable=$(echo ${user} | jq -r ".card-body" 2>&1)
                     # 总共使用流量
-                    last_day_t=$(echo ${user} | jq -r ".last_day_t" 2>&1)
+                    last_day_t=$(echo ${user} | jq -r ".breadcrumb-item active" 2>&1)
                     # 剩余流量
                     transfer_used=$(expr ${transfer_enable} - ${last_day_t})
                     # 转换 GB
