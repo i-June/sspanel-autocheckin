@@ -323,13 +323,13 @@ ssp_autochenkin() {
                         last_check_in_time_text=$(date -r ${last_check_in_time} '+%Y-%m-%d %H:%M:%S')
                     fi
 
-                    user_log_text="\n用户等级: VIP${clasx}\n"
-                    user_log_text="${user_log_text}用户余额: ${money} CNY\n"
-                    user_log_text="${user_log_text}用户限速: ${node_speedlimit} Mbps\n"
+                    #user_log_text="\n用户等级: VIP${clasx}\n"
+                    #user_log_text="${user_log_text}用户余额: ${money} CNY\n"
+                   # user_log_text="${user_log_text}用户限速: ${node_speedlimit} Mbps\n"
                     user_log_text="${user_log_text}总流量: ${transfer_enable_text}\n"
                     user_log_text="${user_log_text}剩余流量: ${transfer_used_text}\n"
                     user_log_text="${user_log_text}已使用流量: ${last_day_t_text}\n"
-                    user_log_text="${user_log_text}等级过期时间: ${class_expire}\n"
+                   # user_log_text="${user_log_text}等级过期时间: ${class_expire}\n"
                     user_log_text="${user_log_text}账户过期时间: ${expire_in}\n"
                     user_log_text="${user_log_text}上次签到时间: ${last_check_in_time_text}"
                 else
